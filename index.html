@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Citibike Analysis</title>
+</head>
+<body>
+    <div class="Header">
+        <h1>Exploring Trends in the Growing NYC Citi-Bike Sharing Program</h1>
+        <h1>~ Kyle Grande</h1>
+    </div>
+    <div class="Overview">
+        <div class="Card">
+            <h2>Introduction</h2>
+            <p>The rapid growth of urban populations and increased awareness about environmental sustainability have contributed to the popularity of bike sharing programs. These programs have become a common mode of transport in many cities, providing an eco-friendly, healthy, and convenient way to travel. Analyzing bike sharing data can provide insights into usage patterns, user behavior, and the overall performance of the program. In this study, we analyze bike sharing data from 2022 to explore trip durations, user types, daily trips over time, and the most popular routes. We also train a time series forecasting model to predict the number of bike rides on a given day.</p>
+        </div>
+        <div class="Card">
+            <h2>Data</h2>
+            <p><a href="https://citibikenyc.com/system-data">Citibike Data</a>The data used in this study was collected from 12 CSV files, each corresponding to a month in 2022. The data includes information on bike trip start and end times, start and end station IDs, user types (member or casual), and latitude and longitude coordinates of the start and end stations. We preprocess the data by combining the CSV files into a single DataFrame, parsing the date and time columns, and calculating additional features such as trip duration, day of the week, hour of the day, and whether the trip occurred on a weekend.</p>
+        </div>
+        <div class="Card">
+            <h2>Methodology</h2>
+            <p>We utilize several data visualization techniques, such as histograms, bar plots, and line plots, to explore the bike sharing. Additionally, we plot the daily number of trips over time and generate maps of the most popular routes using the Folium library. To predict the number of rides on a given day, we employ the Prophet forecasting model from Facebook. This model is designed for time series forecasting with multiple seasonalities and can account for holidays and special events. We preprocess the data for prediction by aggregating the number of rides per day, and then we train the Prophet model with daily, weekly, and yearly seasonality components. We also perform cross-validation and calculate performance metrics to evaluate the model. Finally, we generate a forecast for the next 30 days and visualize the results.</p>
+        </div>
+    </div>
+    <div class="Analysis">
+        <div class="Graphs">
+            <h2>Summary Statistics Plots</h2>
+            <div class="Graph-Card">
+                <div class="Graph-Card-Item">
+                    <img src="assets/daily_trips_over_time.png" alt="Daily Trips Over Time">
+                </div>
+                <div class="Graph-Card-Text"><h3>Daily Trips Over Year</h3> 
+                    <p>The Bike Trips Over Time chart also highlights the increased popularity of bike usage during warmer months.</p>
+                </div>
+            </div>
+            <div class="Graph-Card">
+                <div class="Graph-Card-Text">
+                    <h3>Trips by Day of the Week</h3> 
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dignissimos qui eaque, laborum rerum exercitationem? Consequatur ex id alias rerum facere corporis eveniet recusandae quam. Repudiandae quae mollitia ratione illum.</p>
+                </div>
+                <div class="Graph-Card-Item">
+                    <img src="assets/trips_by_day_of_week.png" alt="Trips by day of week">
+                </div>
+
+            </div>
+            <div class="Graph-Card">
+                <div class="Graph-Card-Item">
+                    <img src="assets/trips_by_hour_of_day.png" alt="Trips by day of week">
+                </div>
+                <div class="Graph-Card-Text">
+                    <h3>Trips by Hour of the Day</h3> 
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dignissimos qui eaque, laborum rerum exercitationem? Consequatur ex id alias rerum facere corporis eveniet recusandae quam. Repudiandae quae mollitia ratione illum.</p>
+                </div>
+
+            </div>
+            <div class="Graph-Card">
+                <div class="Graph-Card-Text">
+                    <h3>Trip Duration Histogram</h3> 
+                    <p>The majority of bicycle journeys are relatively brief, as shown in the bike trip duration histogram, with most trips lasting between 1 and 15 minutes.</p>
+                </div>
+                <div class="Graph-Card-Item">
+                    <img src="assets/duration_histogram.png" alt="Duration Histogram">
+                </div>
+            </div>
+            <div class="Graph-Card">
+                <div class="Graph-Card-Item">
+                    <img src="assets/median_ride_duration_by_user_type.png" alt="Median Ride Duration by User Type">
+                </div>
+                <div class="Graph-Card-Text">
+                    <h3>Medium Ride Duration by Membership Status</h3> 
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dignissimos qui eaque, laborum rerum exercitationem? Consequatur ex id alias rerum facere corporis eveniet recusandae quam. Repudiandae quae mollitia ratione illum.</p>
+                </div>
+            </div>
+            <div class="Graph-Card">      
+                <div class="Graph-Card-Text">
+                    <h3>Trips by Membership Status</h3> 
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dignissimos qui eaque, laborum rerum exercitationem? Consequatur ex id alias rerum facere corporis eveniet recusandae quam. Repudiandae quae mollitia ratione illum.</p>
+                </div>
+                <div class="Graph-Card-Item">
+                    <img src="assets/trips_by_user_type.png" alt="Trips by User Type">
+                </div>
+
+            </div>
+        </div>
+        <div class="Graphs">
+            <h2>Map Graphs</h2>
+            <div class="Graph-Card">
+                <div class="Graph-Card-Item">
+                    <iframe src="assets/popular_routes_map.html" width="100%" height="400"></iframe>
+                </div>
+                <div>
+                    <h3>Popular Routes</h3> 
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dignissimos qui eaque, laborum rerum exercitationem? Consequatur ex id alias rerum facere corporis eveniet recusandae quam. Repudiandae quae mollitia ratione illum.</p>
+                </div>
+            </div>
+            <div class="Graph-Card">
+            <div class="Graph-Card-Text">
+                <h3>Popular Routes Excluding Same Start-End Location</h3> 
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dignissimos qui eaque, laborum rerum exercitationem? Consequatur ex id alias rerum facere corporis eveniet recusandae quam. Repudiandae quae mollitia ratione illum.</p>
+            </div>
+            <div class="Graph-Card-Item">
+                <iframe src="assets/popular_routes_map_exclude_same_start_end.html" width="100%" height="400"></iframe>
+
+            </div>
+            </div> 
+            <div class="Graph-Card">
+                <div class="Graph-Card-Item">
+                    <iframe src="assets/popular_routes_map_all_100.html" width="100%" height="400"></iframe>
+                </div>
+                <div>
+                    <h3>Popular Routes</h3> 
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dignissimos qui eaque, laborum rerum exercitationem? Consequatur ex id alias rerum facere corporis eveniet recusandae quam. Repudiandae quae mollitia ratione illum.</p>
+                </div>
+            </div>
+            <div class="Graph-Card">
+                <div class="Graph-Card-Text">
+                    <h3>Popular Routes Excluding Same Start-End Location</h3> 
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dignissimos qui eaque, laborum rerum exercitationem? Consequatur ex id alias rerum facere corporis eveniet recusandae quam. Repudiandae quae mollitia ratione illum.</p>
+                </div>
+                <div class="Graph-Card-Item">
+                    <iframe src="assets/popular_routes_map_exclude_same_100.html" width="100%" height="400"></iframe>
+    
+                </div>
+                </div> 
+            
+        </div>
+        <div class="Graphs">
+            <h2>Model Prediction Plot</h2><br>
+            <img class="Plot" src="assets/forecast.png"  alt="Model Prediction Plot">
+            <div class="Graph-Card">
+                <div class="Graph-Card-Item">
+                    <img src="assets/code.png" alt="Model Prediction Plot Code">
+                </div>
+                <div class="Graph-Card-Text">
+                    <h3>Time Series Prediction Plot using Prophet</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci illo aut iste esse laboriosam officiis provident reiciendis velit possimus laudantium cum tenetur, maiores autem nesciunt libero ratione perferendis delectus saepe.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
