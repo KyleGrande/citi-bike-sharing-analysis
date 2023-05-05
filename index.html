@@ -185,7 +185,14 @@
                             As the horizon increases, the RMSE and MAE values tend to increase, which is expected because predicting further into the future is generally more challenging. The coverage remains at 0.9 for the first three horizons and drops to 0.8 for the last two horizons.
                             <br>
                             The coverage values are relatively high, at 0.9 for horizons 1 to 3 days and 0.8 for horizons 4 to 5 days. This means that the model's predicted confidence intervals capture the actual values a significant proportion of the time, which is a positive sign.
-
+                            <br>
+                            Forecasting a year into the future is a challenging task, and the model's performance is not as good as it is for the shorter horizons. The model's performance could be improved by including more data, such as weather data, and by tuning the model's hyperparameters.
+                            <br>
+                            However, the model's performance is good enough to provide useful insights into the factors affecting bike ride demand and to inform decision-making for bike-sharing companies.
+                            <br>
+                            We can see that the model is able to capture the seasonality and the general trend of the data. The model's predictions are close to the actual values, and the confidence intervals capture the actual values a significant proportion of the time.
+                            <br>
+                            The model predicts an increase of bike usage over the next year.
                     </p>
                 </div>
                 <div class="Graph-Card-Item">
@@ -254,9 +261,6 @@
                  </div>
             </div>
             <img class="Plot" src="assets/forecast3.png"  alt="Model Prediction Plot">
-
-
-
         </div>
     </div>
 </body>
