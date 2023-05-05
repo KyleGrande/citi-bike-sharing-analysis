@@ -167,7 +167,7 @@
         </div>
         <div class="Graphs">
             <h2>Model Prediction Plots</h2><br>
-            <img class="Plot" src="assets/forecast.png"  alt="Model Prediction Plot">
+            <img class="Plot" src="assets/forecast2.png"  alt="Model Prediction Plot">
             <div class="Graph-Card">
                 <div class="Graph-Card-Item">
                     <img src="assets/code.png" alt="Model Prediction Plot Code">
@@ -178,8 +178,107 @@
                         Time series analysis was chosen because it is well-suited for handling data with temporal dependencies, seasonality, and forecasting requirements. It can provide valuable insights into the factors affecting bike ride demand and inform decision-making for bike-sharing companies. The Prophet model was chosen for ciiti bike ride forecasting because it can effectively handle seasonality, holidays, special events, and non-linear trends while being easy to implement and scalable.  These characteristics make it a good choice for forecasting the number of bike rides per day, given the seasonal patterns and the influence of holidays and special events on the data.
                     </p>
                 </div>
+                
             </div>
-            <img class="Plot" src="assets/forecast2.png"  alt="Model Prediction Plot">
+            <div class="Graph-Card">
+                <div class="Graph-Card-Text">
+                    <h3>Time Series Prediction Plot using Prophet</h3>
+                    <p>
+
+                            The forstcast for 1 day into the future has an RMSE of 19,967.58, MAE of 15,556.55, and MAPE of 46.76%.
+                            <br>
+                            The forstcast for 2 days into the future has an RMSE of 18,359.35, MAE of 14,571.86, and MAPE of 23.12%.
+                            <br>
+                            The forstcast for 3 days into the future has an RMSE of 17,311.22, MAE of 13,771.22, and MAPE of 19.27%.
+                            <br>
+                            The forstcast for 4 days into the future has an RMSE of 21,600.51, MAE of 15,539.02, and MAPE of 18.76%.
+                            <br>
+                            The forstcast for 5 days into the future has an RMSE of 25,155.60, MAE of 19,667.25, and MAPE of 24.29%.
+                            <br>
+                            As the horizon increases, the RMSE and MAE values tend to increase, which is expected because predicting further into the future is generally more challenging. The coverage remains at 0.9 for the first three horizons and drops to 0.8 for the last two horizons.
+                            <br>
+                            The coverage values are relatively high, at 0.9 for horizons 1 to 3 days and 0.8 for horizons 4 to 5 days. This means that the model's predicted confidence intervals capture the actual values a significant proportion of the time, which is a positive sign.
+
+                    </p>
+                </div>
+                <div class="Graph-Card-Item">
+                    <!-- 
+                        horizon           mse          rmse           mae      mape     mdape     smape  coverage
+                        0  1 days  3.987044e+08  19967.582579  15556.554539  0.467577  0.151317  0.411260       0.9
+                        1  2 days  3.370658e+08  18359.352086  14571.856889  0.231151  0.214784  0.265903       0.9
+                        2  3 days  2.996783e+08  17311.218383  13771.221513  0.192709  0.140566  0.192407       0.9
+                        3  4 days  4.665819e+08  21600.507711  15539.015992  0.187608  0.129567  0.228013       0.8
+                        4  5 days  6.328041e+08  25155.597256  19667.254203  0.242874  0.197263  0.301846       0.8s
+                     -->
+                    <table>
+                        <tr>
+                            <th>Horizon</th>
+                            <th>MSE</th>
+                            <th>RMSE</th>
+                            <th>MAE</th>
+                            <th>MAPE</th>  
+                            <th>MDAPE</th>
+                            <th>SMAPE</th>
+                            <th>Coverage</th>
+                        </tr>
+                        <tr>
+                            <td>0  1 days</td>
+                            <td>3.987044e+08</td>
+                            <td>19967.582579</td>
+                            <td>15556.554539</td>
+                            <td>0.467577</td>
+                            <td>0.151317</td>
+                            <td>0.411260</td>
+                            <td>0.9</td>
+                        </tr>
+                        <tr>
+                            <td>1  2 days</td>
+                            <td>3.370658e+08</td>
+                            <td>18359.352086</td>
+                            <td>14571.856889</td>
+                            <td>0.231151</td>
+                            <td>0.214784</td>
+                            <td>0.265903</td>
+                            <td>0.9</td>
+                        </tr>
+                        <tr>
+                            <td>2  3 days</td>
+                            <td>2.996783e+08</td>
+                            <td>17311.218383</td>
+                            <td>13771.221513</td>
+                            <td>0.192709</td>
+                            <td>0.140566</td>
+                            <td>0.192407</td>
+                            <td>0.9</td>
+                        </tr>
+                        <tr>
+                            <td>3  4 days</td>
+                            <td>4.665819e+08</td>
+                            <td>21600.507711</td>
+                            <td>15539.015992</td>
+                            <td>0.187608</td>
+                            <td>0.129567</td>
+                            <td>0.228013</td>
+                            <td>0.8</td>
+                        </tr>
+                        <tr>
+                            <td>4  5 days</td>
+                            <td>6.328041e+08</td>
+                            <td>25155.597256</td>
+                            <td>19667.254203</td>
+                            <td>0.242874</td>
+                            <td>0.197263</td>
+                            <td>0.301846</td>
+                            <td>0.8</td>
+                        </tr>
+
+                        
+                    </table>
+                </div>
+
+                
+            </div>
+            <img class="Plot" src="assets/forecast3.png"  alt="Model Prediction Plot">
         </div>
     </div>
 </body>
