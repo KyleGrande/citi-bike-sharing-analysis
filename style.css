@@ -172,3 +172,7 @@ p {
     border: 1px solid #52528C;
     padding: 10px;
 }
+a{
+    color: rgb(240, 240, 240);
+    /* text-decoration: none; */
+}

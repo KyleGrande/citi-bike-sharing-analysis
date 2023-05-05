@@ -18,12 +18,10 @@
         </div>
         <div class="Card">
             <h2>Data</h2>
-            <p><a href="https://citibikenyc.com/system-data">Citibike Data</a>The data used in this study was collected from 12 CSV files, each corresponding to a month in 2022. The data includes information on bike trip start and end times, start and end station IDs, user types (member or casual), and latitude and longitude coordinates of the start and end stations. We preprocess the data by combining the CSV files into a single DataFrame, parsing the date and time columns, and calculating additional features such as trip duration, day of the week, hour of the day, and whether the trip occurred on a weekend.</p>
-        </div>
+            <p>I used <a href="https://citibikenyc.com/system-data">Citibike Data</a>  collected from 15 CSV files in this study, each corresponding to a month in 2022 and 2023. The data includes information on bike trip start and end times, start and end station IDs, user types (member or casual), and latitude and longitude coordinates of the start and end stations. I preprocessed the data by combining the CSV files into a single DataFrame, parsing the date and time columns, and calculating additional features such as trip duration, day of the week, hour of the day, and whether the trip occurred on a weekend.</p>        </div>
         <div class="Card">
             <h2>Methodology</h2>
-            <p>We utilize several data visualization techniques, such as histograms, bar plots, and line plots, to explore the bike sharing. Additionally, we plot the daily number of trips over time and generate maps of the most popular routes using the Folium library. To predict the number of rides on a given day, we employ the Prophet forecasting model from Facebook. This model is designed for time series forecasting with multiple seasonalities and can account for holidays and special events. We preprocess the data for prediction by aggregating the number of rides per day, and then we train the Prophet model with daily, weekly, and yearly seasonality components. We also perform cross-validation and calculate performance metrics to evaluate the model. Finally, we generate a forecast for the next 30 days and visualize the results.</p>
-        </div>
+            <p>I utilized several data visualization techniques, such as histograms, bar plots, and line plots, to explore the bike sharing. Additionally, I plotted the daily number of trips over time and generated maps of the most popular routes using the Folium library. To predict the number of rides on a given day, I employed the Prophet forecasting model from Facebook. This model is designed for time series forecasting with multiple seasonalities and can account for holidays and special events. I preprocessed the data for prediction by aggregating the number of rides per day, and then I trained the Prophet model with daily, weekly, and yearly seasonality components. I also performed cross-validation and calculated performance metrics to evaluate the model. Finally, I generated a forecast for the next year and visualized the results.</p>        </div>
     </div>
     <div class="Analysis">
         <div class="Graphs">
@@ -191,14 +189,6 @@
                     </p>
                 </div>
                 <div class="Graph-Card-Item">
-                    <!-- 
-                        horizon           mse          rmse           mae      mape     mdape     smape  coverage
-                        0  1 days  3.987044e+08  19967.582579  15556.554539  0.467577  0.151317  0.411260       0.9
-                        1  2 days  3.370658e+08  18359.352086  14571.856889  0.231151  0.214784  0.265903       0.9
-                        2  3 days  2.996783e+08  17311.218383  13771.221513  0.192709  0.140566  0.192407       0.9
-                        3  4 days  4.665819e+08  21600.507711  15539.015992  0.187608  0.129567  0.228013       0.8
-                        4  5 days  6.328041e+08  25155.597256  19667.254203  0.242874  0.197263  0.301846       0.8s
-                     -->
                     <table>
                         <tr>
                             <th>Horizon</th>
@@ -260,14 +250,13 @@
                             <td>0.301846</td>
                             <td>0.8</td>
                         </tr>
-
-                        
                     </table>
-                </div>
-
-                
+                 </div>
             </div>
             <img class="Plot" src="assets/forecast3.png"  alt="Model Prediction Plot">
+
+
+
         </div>
     </div>
 </body>
